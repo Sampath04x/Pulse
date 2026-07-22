@@ -229,3 +229,4 @@ For the complete schema specifications, error codes, request payloads, and respo
 - **Port 8000 already in use:** Modify the port in \docker-compose.yml\ and the Vite configuration target if needed.
 - **Python executable path:** On Windows, prefer running commands via the fully qualified path if your environment has conflicting Python installations.
 
+
