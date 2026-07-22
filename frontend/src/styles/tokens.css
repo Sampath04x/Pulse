@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════
+   PULSE BY SOWAKA — Design Tokens
+   ═══════════════════════════════════════════════ */
+
+/* ── Ashoka Textiles (default green theme) ── */
+:root,
+.theme-ashoka {
+  --color-primary:       #2F7D5A;
+  --color-primary-lt:    #E8F4EE;
+  --color-primary-dim:   rgba(47, 125, 90, 0.08);
+  --color-primary-mid:   rgba(47, 125, 90, 0.18);
+  --color-accent:        #4CAF7D;
+  --color-bg:            #F8FAF8;
+  --color-white:         #FFFFFF;
+  --color-text:          #1A2E1A;
+  --color-text-secondary:#4A6741;
+  --color-muted:         #6B8F71;
+  --color-border:        rgba(47, 125, 90, 0.10);
+  --color-border-soft:   rgba(47, 125, 90, 0.06);
+  --color-warning:       #F59E0B;
+  --color-warning-lt:    #FEF3C7;
+  --color-danger:        #EF4444;
+  --color-danger-lt:     #FEE2E2;
+  --color-success:       #2F7D5A;
+  --color-success-lt:    #E8F4EE;
+
+  /* Gradient */
+  --gradient-primary:    linear-gradient(135deg, #2F7D5A 0%, #4CAF7D 100%);
+  --gradient-hero:       linear-gradient(135deg, #E8F4EE 0%, #F8FAF8 100%);
+
+  /* Chart colors */
+  --chart-line:          #2F7D5A;
+  --chart-fill-start:    rgba(47, 125, 90, 0.18);
+  --chart-fill-end:      rgba(47, 125, 90, 0);
+  --chart-dot:           #2F7D5A;
+}
+
+/* ── Bright Path Consulting (blue-green theme) ── */
+.theme-brightpath {
+  --color-primary:       #2D7DA0;
+  --color-primary-lt:    #E6F4FA;
+  --color-primary-dim:   rgba(45, 125, 160, 0.08);
+  --color-primary-mid:   rgba(45, 125, 160, 0.18);
+  --color-accent:        #3BA8CE;
+  --color-bg:            #F6FAFB;
+  --color-white:         #FFFFFF;
+  --color-text:          #1A2633;
+  --color-text-secondary:#3D6478;
+  --color-muted:         #5A8EA8;
+  --color-border:        rgba(45, 125, 160, 0.10);
+  --color-border-soft:   rgba(45, 125, 160, 0.06);
+
+  --gradient-primary:    linear-gradient(135deg, #2D7DA0 0%, #3BA8CE 100%);
+  --gradient-hero:       linear-gradient(135deg, #E6F4FA 0%, #F6FAFB 100%);
+
+  --chart-line:          #2D7DA0;
+  --chart-fill-start:    rgba(45, 125, 160, 0.18);
+  --chart-fill-end:      rgba(45, 125, 160, 0);
+  --chart-dot:           #2D7DA0;
+}
+
+/* ── Spacing ── */
+:root {
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-soft:  0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 6px 24px rgba(47, 125, 90, 0.12);
+  --shadow-card:  0 1px 4px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-xs:     11px;
+  --font-sm:     13px;
+  --font-md:     15px;
+  --font-lg:     17px;
+  --font-xl:     20px;
+  --font-2xl:    24px;
+  --font-3xl:    30px;
+  --font-4xl:    38px;
+
+  /* Transitions — ONLY 150ms ease */
+  --transition: 150ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Sidebar */
+  --sidebar-width: 240px;
+}

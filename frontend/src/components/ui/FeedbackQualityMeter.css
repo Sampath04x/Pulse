@@ -1,0 +1,20 @@
+.fqm { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.fqm-header { display: flex; align-items: center; justify-content: space-between; }
+.fqm-title  { font-size: 11px; font-weight: 600; color: var(--color-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+.fqm-label  { font-size: 12px; font-weight: 600; }
+.fqm-track  { height: 5px; background: var(--color-primary-lt); border-radius: var(--radius-full); overflow: hidden; }
+.fqm-fill   { height: 100%; border-radius: var(--radius-full); transition: width 300ms ease, background 300ms ease; }
+.fqm-badge  { font-size: 11px; font-weight: 500; }
+
+.meter-low   .fqm-fill, .fqm-fill.meter-low   { background: #EF4444; }
+.meter-low   .fqm-label, .fqm-label.meter-low   { color: #EF4444; }
+.meter-mid   .fqm-fill, .fqm-fill.meter-mid   { background: #F59E0B; }
+.meter-mid   .fqm-label, .fqm-label.meter-mid   { color: #F59E0B; }
+.meter-mid   .fqm-badge, .fqm-badge.meter-mid   { color: #D97706; }
+.meter-good  .fqm-fill, .fqm-fill.meter-good  { background: #3B82F6; }
+.meter-good  .fqm-label, .fqm-label.meter-good  { color: #3B82F6; }
+.meter-great .fqm-fill, .fqm-fill.meter-great { background: var(--color-primary); }
+.meter-great .fqm-label, .fqm-label.meter-great { color: var(--color-primary); }
+.meter-excel .fqm-fill, .fqm-fill.meter-excel { background: var(--gradient-primary); }
+.meter-excel .fqm-label, .fqm-label.meter-excel { color: var(--color-primary); }
+.meter-excel .fqm-badge, .fqm-badge.meter-excel { color: var(--color-primary); }

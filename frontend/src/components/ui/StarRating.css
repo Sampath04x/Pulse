@@ -1,0 +1,15 @@
+.star-rating { display: inline-flex; gap: 2px; }
+
+.star {
+  line-height: 1;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.star-filled  { color: #F59E0B; }
+.star-empty   { color: #D1FAE5; }
+.star-interactive { cursor: pointer; }
+.star-interactive:hover { transform: scale(1.15); }
+
+.star-sm .star { font-size: 14px; }
+.star-md .star { font-size: 18px; }
+.star-lg .star { font-size: 24px; }
+.star-xl .star { font-size: 30px; }

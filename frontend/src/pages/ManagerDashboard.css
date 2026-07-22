@@ -1,0 +1,107 @@
+.mgr-hero {
+  margin-bottom: var(--space-8);
+}
+.mgr-hero-left { margin-bottom: var(--space-6); }
+.mgr-greeting { font-size: var(--font-3xl); font-weight: 700; letter-spacing: -0.02em; margin-bottom: var(--space-2); }
+.mgr-sub { font-size: var(--font-lg); color: var(--color-muted); margin-bottom: var(--space-4); }
+.mgr-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--color-primary-lt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--color-primary);
+}
+.mgr-cta-text { font-size: var(--font-sm); font-weight: 500; color: var(--color-text); flex: 1; }
+
+.mgr-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.mgr-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-6);
+}
+.mgr-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-4);
+}
+.mgr-priorities { display: flex; flex-direction: column; gap: var(--space-4); }
+.mgr-main {}
+.mgr-sidebar-col { display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Priority card */
+.priority-card { transition: transform var(--transition), box-shadow var(--transition); }
+.priority-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.priority-info { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.priority-name  { font-size: 15px; font-weight: 600; color: var(--color-text); }
+.priority-title { font-size: 12px; color: var(--color-muted); margin-bottom: 4px; }
+.priority-hint  {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-soft);
+  font-style: italic;
+  line-height: 1.6;
+}
+.priority-progress { margin-top: var(--space-3); display: flex; align-items: center; gap: var(--space-3); }
+.priority-progress-label { font-size: 11px; color: var(--color-muted); white-space: nowrap; }
+
+.empty-card {
+  background: var(--color-primary-lt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-muted);
+  font-size: var(--font-sm);
+}
+
+/* Widgets */
+.widget-title  { font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3); }
+.widget-body   { display: flex; flex-direction: column; gap: var(--space-2); }
+.upcoming-month { font-size: 14px; font-weight: 600; color: var(--color-text); }
+.upcoming-range { font-size: 12px; color: var(--color-muted); margin-bottom: var(--space-2); }
+.upcoming-items { display: flex; flex-direction: column; gap: 8px; }
+.upcoming-item  { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.upcoming-dot   { width: 7px; height: 7px; border-radius: 50%; background: var(--color-primary); flex-shrink: 0; }
+.upcoming-day   { color: var(--color-muted); font-size: 12px; min-width: 72px; }
+.upcoming-name  { color: var(--color-text); font-weight: 500; }
+
+.highlight-item { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--color-border-soft); }
+.highlight-label { font-size: 13px; color: var(--color-text); }
+.highlight-trend { font-size: 16px; font-weight: 700; }
+.highlight-trend.up   { color: var(--color-primary); }
+.highlight-trend.down { color: var(--color-danger); }
+
+/* Insights */
+.insights-card { background: var(--color-primary-lt); border-color: var(--color-primary-dim); }
+.insights-sub  { font-size: 11px; color: var(--color-muted); margin-bottom: var(--space-3); }
+.insights-items { display: flex; flex-direction: column; gap: var(--space-3); }
+.insights-row  { display: flex; align-items: baseline; gap: 6px; font-size: 13px; color: var(--color-text); }
+.insights-pct  { font-size: 18px; font-weight: 700; color: var(--color-primary); }
+.insights-warn {
+  font-size: 12px;
+  color: #D97706;
+  background: #FEF3C7;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 1024px) {
+  .mgr-body { grid-template-columns: 1fr; }
+  .mgr-stats { grid-template-columns: repeat(2, 1fr); }
+}

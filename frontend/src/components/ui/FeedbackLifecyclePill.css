@@ -1,0 +1,36 @@
+.lifecycle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.lifecycle-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lifecycle-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+.lifecycle-dot.done   { background: var(--color-primary); }
+.lifecycle-dot.active { background: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-lt); }
+.lifecycle-dot.future { background: #D1D5DB; }
+
+.lifecycle-line {
+  width: 24px; height: 2px;
+  background: #E5E7EB;
+  border-radius: 1px;
+  margin: 0 4px;
+  transition: background 300ms ease;
+}
+.lifecycle-line.done { background: var(--color-primary); }
+
+.lifecycle-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.lifecycle-current { color: var(--color-primary); font-weight: 600; }

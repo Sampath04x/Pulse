@@ -1,0 +1,33 @@
+.celebration {
+  position: fixed; inset: 0;
+  background: rgba(248,250,248,0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+.celebration-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 420px;
+  text-align: center;
+  padding: var(--space-12);
+}
+.celebration-icon { font-size: 56px; margin-bottom: var(--space-4); }
+.celebration-title { font-size: var(--font-3xl); font-weight: 700; color: var(--color-text); }
+.celebration-sub { font-size: var(--font-md); color: var(--color-muted); }
+.celebration-quote {
+  font-size: var(--font-md);
+  color: var(--color-primary);
+  font-style: italic;
+  margin: var(--space-2) 0 var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-primary-lt);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  text-align: left;
+}
+.celebration-actions { display: flex; gap: var(--space-3); }

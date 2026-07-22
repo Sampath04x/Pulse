@@ -1,0 +1,144 @@
+.hr-health-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-6);
+  background: var(--color-white);
+}
+
+.hr-health-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.hr-health-title {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hr-health-pct {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.hr-health-sub {
+  font-size: var(--font-sm);
+  color: var(--color-muted);
+}
+
+.hr-health-stats {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.hr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.hr-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-5);
+}
+
+.hr-card-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+}
+
+.hr-card-sub {
+  font-size: var(--font-sm);
+  color: var(--color-muted);
+}
+
+.dept-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dept-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dept-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-sm);
+}
+
+.dept-name {
+  font-weight: 500;
+}
+
+.dept-pct {
+  color: var(--color-muted);
+}
+
+.manager-pending-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.manager-pending-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.manager-pending-info {
+  flex: 1;
+}
+
+.manager-pending-name {
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+.manager-pending-dept {
+  font-size: var(--font-xs);
+  color: var(--color-muted);
+}
+
+.pending-badge {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--color-warning);
+  background: var(--color-warning-lt);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.hr-empty {
+  font-size: var(--font-sm);
+  color: var(--color-muted);
+  text-align: center;
+  padding: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .hr-health-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hr-grid {
+    grid-template-columns: 1fr;
+  }
+}
