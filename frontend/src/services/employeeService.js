@@ -1,8 +1,9 @@
 // services/employeeService.js
+import { apiFetch } from './api';
 import { getAuthHeaders } from './authService';
 
 export async function getEmployeeDashboard(userId) {
-  const response = await fetch('/api/employee/dashboard', {
+  const response = await apiFetch('/api/employee/dashboard', {
     headers: getAuthHeaders()
   });
   if (!response.ok) {
@@ -12,7 +13,7 @@ export async function getEmployeeDashboard(userId) {
 }
 
 export async function getGrowthHistory(userId) {
-  const response = await fetch(`/api/employee/history?employee_id=${userId}`, {
+  const response = await apiFetch(`/api/employee/history?employee_id=${userId}`, {
     headers: getAuthHeaders()
   });
   if (!response.ok) {

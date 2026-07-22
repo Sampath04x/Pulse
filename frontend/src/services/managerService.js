@@ -1,8 +1,9 @@
 // services/managerService.js
+import { apiFetch } from './api';
 import { getAuthHeaders } from './authService';
 
 export async function getManagerDashboard(managerId) {
-  const response = await fetch('/api/manager/dashboard', {
+  const response = await apiFetch('/api/manager/dashboard', {
     headers: getAuthHeaders()
   });
   if (!response.ok) {
@@ -12,7 +13,7 @@ export async function getManagerDashboard(managerId) {
 }
 
 export async function getTeamOverview(managerId) {
-  const response = await fetch('/api/manager/team-overview', {
+  const response = await apiFetch('/api/manager/team-overview', {
     headers: getAuthHeaders()
   });
   if (!response.ok) {

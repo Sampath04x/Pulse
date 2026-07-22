@@ -1,4 +1,5 @@
 // services/authService.js
+import { apiFetch } from './api';
 
 export function getAuthHeaders() {
   const token = localStorage.getItem('token');
@@ -9,7 +10,7 @@ export function getAuthHeaders() {
 }
 
 export async function login({ email, password }) {
-  const response = await fetch('/api/auth/login', {
+  const response = await apiFetch('/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
@@ -24,7 +25,7 @@ export async function login({ email, password }) {
   localStorage.setItem('token', tokenData.access_token);
 
   // Fetch me to populate user info
-  const meResponse = await fetch('/api/auth/me', {
+  const meResponse = await apiFetch('/api/auth/me', {
     headers: getAuthHeaders()
   });
 
@@ -35,7 +36,7 @@ export async function login({ email, password }) {
   const user = await meResponse.json();
   
   // Fetch company
-  const companyResponse = await fetch(`/api/companies/${user.company_id}`, {
+  const companyResponse = await apiFetch(`/api/companies/${user.company_id}`, {
     headers: getAuthHeaders()
   });
   const company = companyResponse.ok ? await companyResponse.json() : null;
@@ -59,7 +60,7 @@ export async function loginAsDemo(role) {
 }
 
 export async function logout() {
-  await fetch('/api/auth/logout', {
+  await apiFetch('/api/auth/logout', {
     method: 'POST',
     headers: getAuthHeaders()
   });

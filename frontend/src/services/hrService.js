@@ -1,8 +1,9 @@
 // services/hrService.js
+import { apiFetch } from './api';
 import { getAuthHeaders } from './authService';
 
 export async function getHRDashboard(companyId) {
-  const response = await fetch('/api/hr/dashboard', {
+  const response = await apiFetch('/api/hr/dashboard', {
     headers: getAuthHeaders()
   });
   if (!response.ok) {
@@ -12,7 +13,7 @@ export async function getHRDashboard(companyId) {
 }
 
 export async function getOrgTree(companyId) {
-  const response = await fetch('/api/hr/org-tree', {
+  const response = await apiFetch('/api/hr/org-tree', {
     headers: getAuthHeaders()
   });
   if (!response.ok) {

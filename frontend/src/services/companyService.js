@@ -1,8 +1,9 @@
 // services/companyService.js
+import { apiFetch } from './api';
 import { getAuthHeaders } from './authService';
 
 export async function getCompanies() {
-  const response = await fetch('/api/companies', {
+  const response = await apiFetch('/api/companies', {
     headers: getAuthHeaders()
   });
   if (!response.ok) {
@@ -12,7 +13,7 @@ export async function getCompanies() {
 }
 
 export async function getCompany(companyId) {
-  const response = await fetch(`/api/companies/${companyId}`, {
+  const response = await apiFetch(`/api/companies/${companyId}`, {
     headers: getAuthHeaders()
   });
   if (!response.ok) {

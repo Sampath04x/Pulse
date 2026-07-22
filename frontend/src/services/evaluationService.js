@@ -1,4 +1,5 @@
 // services/evaluationService.js
+import { apiFetch } from './api';
 import { getAuthHeaders } from './authService';
 
 export const parameters = [
@@ -15,7 +16,7 @@ export const parameters = [
 ];
 
 export async function getEvaluation(evaluationId) {
-  const response = await fetch(`/api/evaluations/${evaluationId}`, {
+  const response = await apiFetch(`/api/evaluations/${evaluationId}`, {
     headers: getAuthHeaders()
   });
   if (!response.ok) {
@@ -25,7 +26,7 @@ export async function getEvaluation(evaluationId) {
 }
 
 export async function saveDraft(evaluationId, dimensions) {
-  const response = await fetch(`/api/evaluations/${evaluationId}/draft`, {
+  const response = await apiFetch(`/api/evaluations/${evaluationId}/draft`, {
     method: 'POST',
     headers: getAuthHeaders(),
     body: JSON.stringify(dimensions)
@@ -37,7 +38,7 @@ export async function saveDraft(evaluationId, dimensions) {
 }
 
 export async function submitEvaluation(evaluationId, dimensions) {
-  const response = await fetch(`/api/evaluations/${evaluationId}/submit`, {
+  const response = await apiFetch(`/api/evaluations/${evaluationId}/submit`, {
     method: 'POST',
     headers: getAuthHeaders(),
     body: JSON.stringify(dimensions)
@@ -49,7 +50,7 @@ export async function submitEvaluation(evaluationId, dimensions) {
 }
 
 export async function createEvaluation(employeeId, managerId, companyId, month, year) {
-  const response = await fetch(`/api/evaluations/create?employee_id=${employeeId}&month=${month}&year=${year}`, {
+  const response = await apiFetch(`/api/evaluations/create?employee_id=${employeeId}&month=${month}&year=${year}`, {
     method: 'POST',
     headers: getAuthHeaders()
   });
