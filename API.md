@@ -5,6 +5,9 @@ Interactive Docs: `http://localhost:8000/docs`
 
 ---
 
+## CORS Headers
+CORS allowed origins are configured for localhost ports 5173/5174. Custom origins should be appended to the CORS origins array in main.py.
+
 ## Authentication
 
 All protected endpoints require a **Bearer token** in the `Authorization` header:
@@ -393,3 +396,4 @@ Returns the full organizational hierarchy tree rooted at the company head.
 | Employee (Ashoka) | `rahul@ashoka.com` | `password123` |
 | HR / Admin (Bright Path) | `founder@brightpath.com` | `password123` |
 | Manager (Bright Path) | `divya@brightpath.com` | `password123` |
+
