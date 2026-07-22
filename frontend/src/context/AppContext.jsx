@@ -15,7 +15,8 @@ export function AppProvider({ children }) {
   // Apply theme whenever company changes
   useTheme(currentCompany?.theme || 'theme-ashoka');
 
-  // Load companies from API on mount
+  // Load companies from API on mount, with fallback definitions
+
   useEffect(() => {
     getCompanies()
       .then(data => setCompanies(data))
@@ -75,3 +76,4 @@ export function useApp() {
   if (!ctx) throw new Error('useApp must be used within AppProvider');
   return ctx;
 }
+
