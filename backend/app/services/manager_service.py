@@ -55,7 +55,8 @@ def get_manager_dashboard_data(db: Session, manager_id: str) -> Dict:
                 except:
                     pass
                     
-    # Calculate Insights dynamically
+    # Calculate Insights dynamically based on word length and evaluation counts
+
     # 1. Completion Rate
     completion_rate = int((total_completed / len(team)) * 100) if team else 100
     
@@ -132,3 +133,4 @@ def get_team_overview(db: Session, manager_id: str) -> List[Dict]:
         })
         
     return team_data
+
