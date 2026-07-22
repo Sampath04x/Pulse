@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Leaf, User, Users, Building2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { loginAsDemo } from '../services/authService';
+import { login as apiLogin, loginAsDemo } from '../services/authService';
 import { Button } from '../components/ui/Button';
 import './Login.css';
 
 export default function Login() {
-  const { login, isAuthenticated, activeRole } = useApp();
+  const { login: loginContext, isAuthenticated, activeRole } = useApp();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,12 +20,31 @@ export default function Login() {
     }
   }, [isAuthenticated, activeRole, navigate]);
 
+  async function handleLogin(e) {
+    if (e) e.preventDefault();
+    if (!email || !password) {
+      setError('Please enter your email and password');
+      return;
+    }
+    setLoading('form');
+    setError('');
+    try {
+      const { user, company, activeRole } = await apiLogin({ email, password });
+      loginContext(user, company, activeRole);
+      navigate(activeRole === 'manager' ? '/manager' : activeRole === 'hr' ? '/hr' : '/employee');
+    } catch (e) {
+      setError(e.message || 'Invalid email or password');
+    } finally {
+      setLoading(null);
+    }
+  }
+
   async function handleDemo(role) {
     setLoading(role);
     setError('');
     try {
       const { user, company, activeRole } = await loginAsDemo(role);
-      login(user, company, activeRole || role);
+      loginContext(user, company, activeRole || role);
       navigate(role === 'manager' ? '/manager' : role === 'hr' ? '/hr' : '/employee');
     } catch (e) {
       setError(e.message);
@@ -69,7 +88,7 @@ export default function Login() {
 
       {/* Right Panel */}
       <div className="login-right">
-        <div className="login-form-card card card-pad fade-in">
+        <form onSubmit={handleLogin} className="login-form-card card card-pad fade-in">
           <h2 className="login-form-title">Welcome back</h2>
           <p className="login-form-sub">Sign in to continue to Pulse</p>
 
@@ -99,22 +118,22 @@ export default function Login() {
             />
           </div>
 
-          <Button variant="primary" size="lg" fullWidth onClick={() => handleDemo('manager')} loading={loading === 'form'}>
+          <Button type="submit" variant="primary" size="lg" fullWidth loading={loading === 'form'}>
             Sign In
           </Button>
 
           <div className="login-divider"><span>Try a demo</span></div>
 
           <div className="login-demo-grid">
-            <button className="login-demo-btn flex items-center justify-center gap-1" onClick={() => handleDemo('manager')} disabled={!!loading}>
+            <button type="button" className="login-demo-btn flex items-center justify-center gap-1" onClick={() => handleDemo('manager')} disabled={!!loading}>
               <User size={14} />
               <span>{loading === 'manager' ? '...' : 'Manager'}</span>
             </button>
-            <button className="login-demo-btn flex items-center justify-center gap-1" onClick={() => handleDemo('employee')} disabled={!!loading}>
+            <button type="button" className="login-demo-btn flex items-center justify-center gap-1" onClick={() => handleDemo('employee')} disabled={!!loading}>
               <Users size={14} />
               <span>{loading === 'employee' ? '...' : 'Team Member'}</span>
             </button>
-            <button className="login-demo-btn flex items-center justify-center gap-1" onClick={() => handleDemo('hr')} disabled={!!loading}>
+            <button type="button" className="login-demo-btn flex items-center justify-center gap-1" onClick={() => handleDemo('hr')} disabled={!!loading}>
               <Building2 size={14} />
               <span>{loading === 'hr' ? '...' : 'HR'}</span>
             </button>
@@ -123,7 +142,7 @@ export default function Login() {
           <p className="login-terms">
             By continuing you agree to our <a href="#">Terms of Service</a>
           </p>
-        </div>
+        </form>
       </div>
     </div>
   );
