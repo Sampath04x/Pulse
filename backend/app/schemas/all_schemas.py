@@ -3,10 +3,12 @@ from typing import List, Optional
 from app.models.all_models import EvaluationStatus
 
 # ── Auth ──
+# Login request credentials
 class LoginRequest(BaseModel):
     email: str
     password: str
 
+# Authentication token container
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
@@ -145,3 +147,4 @@ class OrgTreeNode(BaseModel):
 
     class Config:
         from_attributes = True
+
