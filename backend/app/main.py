@@ -16,7 +16,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger("main")
 
-# Auto-seed trigger if database isn't initialized or file doesn't exist
+# Auto-seed trigger: Checks database size and folder status on startup
+ if database isn't initialized or file doesn't exist
 db_file = settings.DATABASE_URL.replace("sqlite:///", "")
 if not os.path.exists(db_file) or os.path.getsize(db_file) == 0:
     logger.info("Database file empty or not found. Running seed script...")
@@ -64,3 +65,4 @@ def health():
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+
