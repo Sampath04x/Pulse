@@ -29,6 +29,7 @@
 }
 
 .welcome-tagline {
+  margin-bottom: var(--space-4);
   font-size: var(--font-xs);
   font-weight: 600;
   text-transform: uppercase;
@@ -73,3 +74,4 @@
   font-size: var(--font-xs);
   color: var(--color-muted);
 }
+
