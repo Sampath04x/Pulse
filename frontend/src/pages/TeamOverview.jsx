@@ -59,8 +59,10 @@ export default function TeamOverview() {
               <div className="team-dimensions-list">
                 {dimensions.length > 0 ? (
                   dimensions.map((d) => (
-                    <div key={d.parameterId} className="team-dim-row">
-                      <span className="team-dim-label">{d.parameterId}</span>
+                    <div key={d.parameter_id} className="team-dim-row">
+                      <span className="team-dim-label" style={{ textTransform: 'capitalize' }}>
+                        {d.parameter_id}
+                      </span>
                       <div className="team-dim-bar">
                         <ProgressBar value={d.score} max={5} size="sm" />
                       </div>
