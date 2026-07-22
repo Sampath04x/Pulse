@@ -3,6 +3,12 @@
 
 A multi-tenant employee growth platform that enables managers to provide structured monthly coaching conversations while giving HR visibility into organizational progress.
 
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=json-web-tokens)](https://jwt.io/)
+
 ---
 
 ## 🌿 Quick Demo
@@ -217,6 +223,31 @@ For the complete schema specifications, error codes, request payloads, and respo
 
 ---
 
+## 📸 Screenshots
+
+### Welcome & Onboarding
+![Welcome Onboarding](https://placehold.co/800x450/2F7D5A/FFFFFF?text=Pulse+Welcome+Onboarding)
+
+### Manager Dashboard & Team List
+![Manager Dashboard](https://placehold.co/800x450/2F7D5A/FFFFFF?text=Pulse+Manager+Dashboard)
+
+### Employee Growth History & Trend Charts
+![Employee Dashboard](https://placehold.co/800x450/2F7D5A/FFFFFF?text=Pulse+Employee+Dashboard)
+
+### Notion-Style HR Dashboard
+![HR Dashboard](https://placehold.co/800x450/2F7D5A/FFFFFF?text=Pulse+HR+Dashboard)
+
+---
+
+## 📌 Assumptions
+
+- **Evaluation Frequency:** Exactly one evaluation cycle per employee is processed per month (e.g. July 2024).
+- **Direct Reports Limits:** Managers are authorized to review and submit evaluations exclusively for their direct reports.
+- **HR Dashboard Scope:** HR visibility is read-only for organizational progress metrics. HR manages locking/unlocking states.
+- **Static Dimensions:** The 5 evaluation parameters (Ownership, Communication, Quality of Work, Collaboration, Initiative) are seeded and consistent across all departments.
+
+---
+
 ## 🔮 Future Roadmap
 
 1. **Alembic Database Migrations:** Integrate Alembic fully for clean, versioned database schema migration pathways.
@@ -224,9 +255,12 @@ For the complete schema specifications, error codes, request payloads, and respo
 3. **Custom Evaluation Parameters:** Allow HR administrators to configure custom evaluation questions/dimensions per department.
 4. **Push Notifications:** Introduce real-time WebSocket notifications when an evaluation is submitted or locked.
 
+---
 
-## Troubleshooting
-- **Port 8000 already in use:** Modify the port in \docker-compose.yml\ and the Vite configuration target if needed.
-- **Python executable path:** On Windows, prefer running commands via the fully qualified path if your environment has conflicting Python installations.
+## 🔧 Troubleshooting
+
+- **Port 8000 already in use:** Modify the port mapping in `docker-compose.yml` and the Vite config proxy target if port 8000 is occupied by another process.
+- **Python Executable Path:** On Windows systems, prefer executing script commands using the fully qualified path (`C:\Users\...\python.exe`) if multiple conflicting environment setups are active.
+
 
 
