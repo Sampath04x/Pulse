@@ -223,3 +223,8 @@ For the complete schema specifications, error codes, request payloads, and respo
 2. **Audit Logs Table:** Add an audit logging table to track when feedback is modified, finalized, or when user roles are swapped.
 3. **Custom Evaluation Parameters:** Allow HR administrators to configure custom evaluation questions/dimensions per department.
 4. **Push Notifications:** Introduce real-time WebSocket notifications when an evaluation is submitted or locked.
+
+
+## Troubleshooting
+- **Port 8000 already in use:** Modify the port in \docker-compose.yml\ and the Vite configuration target if needed.
+- **Python executable path:** On Windows, prefer running commands via the fully qualified path if your environment has conflicting Python installations.
