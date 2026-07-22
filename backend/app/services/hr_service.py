@@ -123,7 +123,8 @@ def get_org_tree(db: Session, company_id: str) -> dict:
         
     root_user = roots[0]
     
-    def build_node(user) -> dict:
+    # Recursive function to traverse and serialize reporting relationships
+def build_node(user) -> dict:
         children = by_manager.get(user.id, [])
         children = sorted(children, key=lambda x: x.name)
         return {
@@ -141,4 +142,5 @@ def get_org_tree(db: Session, company_id: str) -> dict:
         }
         
     return build_node(root_user)
+
 
