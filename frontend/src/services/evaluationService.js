@@ -1,19 +1,10 @@
 // services/evaluationService.js
 import { apiFetch } from './api';
 import { getAuthHeaders } from './authService';
+import { parameters as mockParameters } from '../data/mockData';
 
-export const parameters = [
-  { id: 'ownership',      label: 'Ownership',       iconName: 'Target',
-    tip: 'Mention one specific example. It makes a bigger impact.' },
-  { id: 'communication',  label: 'Communication',    iconName: 'MessageSquare',
-    tip: 'Mention one recent meeting or presentation moment.' },
-  { id: 'quality',        label: 'Quality of Work',  iconName: 'Zap',
-    tip: 'Highlight one specific deliverable or output they owned.' },
-  { id: 'collaboration',  label: 'Collaboration',    iconName: 'Users',
-    tip: 'Think about a moment they actively supported the team.' },
-  { id: 'initiative',     label: 'Initiative',       iconName: 'Rocket',
-    tip: 'Mention one time they went beyond what was asked of them.' },
-];
+// Re-export rich parameters from mockData
+export const parameters = mockParameters;
 
 export async function getEvaluation(evaluationId) {
   const response = await apiFetch(`/api/evaluations/${evaluationId}`, {

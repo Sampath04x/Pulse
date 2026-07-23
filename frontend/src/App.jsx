@@ -50,7 +50,7 @@ export function AppRoutes() {
       />
       <Route
         path="/feedback/:id"
-        element={<ProtectedRoute allowedRoles={['manager']}><FeedbackForm /></ProtectedRoute>}
+        element={<ProtectedRoute allowedRoles={['manager', 'hr']}><FeedbackForm /></ProtectedRoute>}
       />
 
       {/* HR Routes */}
@@ -72,12 +72,14 @@ export function AppRoutes() {
       <Route path="/companies" element={<ProtectedRoute><HRDashboard /></ProtectedRoute>} />
       <Route path="/members" element={<ProtectedRoute><TeamOverview /></ProtectedRoute>} />
       <Route path="/progress" element={<ProtectedRoute><HRDashboard /></ProtectedRoute>} />
-      <Route path="/settings" element={<ProtectedRoute><EmployeeDashboard /></ProtectedRoute>} />
+      <Route path="/admin" element={<ProtectedRoute allowedRoles={['hr', 'admin']}><HRDashboard /></ProtectedRoute>} />
+      <Route path="/settings" element={<ProtectedRoute><HRDashboard /></ProtectedRoute>} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
+
 
 export default function App() {
   return (

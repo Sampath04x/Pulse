@@ -13,6 +13,8 @@ export function Button({
   type = 'button',
   fullWidth = false,
   className = '',
+  style,
+  title,
 }) {
   return (
     <button
@@ -20,6 +22,8 @@ export function Button({
       className={`btn btn-${variant} btn-${size} ${fullWidth ? 'btn-full' : ''} ${className}`}
       onClick={onClick}
       disabled={disabled || loading}
+      style={style}
+      title={title}
     >
       {loading
         ? <span className="btn-spinner" />

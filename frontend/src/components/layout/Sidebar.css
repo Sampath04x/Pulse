@@ -98,6 +98,74 @@
 }
 .sidebar-logout:hover { color: var(--color-danger); }
 
+/* Role badge & switcher */
+.sidebar-role-badge {
+  margin: 0 var(--space-3) var(--space-2);
+  padding: 3px 10px;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-dim);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-self: flex-start;
+  text-transform: capitalize;
+}
+
+.sidebar-role-wrapper {
+  position: relative;
+  margin: 0 var(--space-3) var(--space-2);
+}
+
+.sidebar-role-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  font-size: var(--font-xs); font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-dim);
+  border: 1px solid var(--color-primary-mid);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition);
+  width: 100%;
+}
+.sidebar-role-btn:hover { background: var(--color-primary-lt); }
+.sidebar-role-chevron { color: var(--color-primary); }
+
+.sidebar-role-menu {
+  position: absolute;
+  left: 0; top: 110%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  z-index: 100;
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.sidebar-role-option {
+  display: block; width: 100%; text-align: left;
+  padding: 10px 14px;
+  font-size: var(--font-sm); font-weight: 500;
+  color: var(--color-text); background: none; border: none;
+  cursor: pointer;
+  transition: background var(--transition);
+  text-transform: capitalize;
+}
+.sidebar-role-option:hover { background: var(--color-primary-dim); color: var(--color-primary); }
+.sidebar-role-option-active { background: var(--color-primary-lt) !important; color: var(--color-primary) !important; font-weight: 700 !important; }
+
+/* Logo icon wrapper */
+.sidebar-logo-icon-wrapper {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-sm);
+  color: white;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1024px) {
   .sidebar { display: none; }
 }
