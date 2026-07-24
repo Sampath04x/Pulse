@@ -56,7 +56,8 @@ export async function loginAsDemo(role) {
     throw new Error(`Invalid demo role: ${role}`);
   }
 
-  return login(credentials);
+  const result = await login(credentials);
+  return { ...result, activeRole: role };
 }
 
 export async function logout() {
